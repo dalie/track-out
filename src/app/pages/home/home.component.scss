@@ -1,0 +1,13 @@
+.container {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+
+  height: 100%;
+  .menu {
+    display: grid;
+    row-gap: 20px;
+    align-items: center;
+    width: 300px;
+  }
+}
