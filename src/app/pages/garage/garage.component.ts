@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Car } from 'src/app/cars/car';
+import { CarService } from 'src/app/services/car.service';
 
 @Component({
   selector: 'app-garage',
@@ -6,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./garage.component.scss']
 })
 export class GarageComponent implements OnInit {
-
-  constructor() { }
+  cars: Car[] = [];
+  constructor() {}
 
   ngOnInit() {
+    this.cars.push(CarService.create('touring-car', { engineForce: 30000 }));
+    this.cars.push(CarService.create('touring-car'));
+    this.cars.push(CarService.create('touring-car'));
+    this.cars.push(CarService.create('touring-car'));
   }
-
 }
