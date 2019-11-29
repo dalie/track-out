@@ -9,6 +9,7 @@ import { CarService } from 'src/app/services/car.service';
 })
 export class GarageComponent implements OnInit {
   cars: Car[] = [];
+  selectedCar: Car;
   constructor() {}
 
   ngOnInit() {
@@ -16,5 +17,7 @@ export class GarageComponent implements OnInit {
     this.cars.push(CarService.create('touring-car'));
     this.cars.push(CarService.create('touring-car'));
     this.cars.push(CarService.create('touring-car'));
+
+    this.selectedCar = this.cars[1];
   }
 }

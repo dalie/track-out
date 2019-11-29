@@ -2,7 +2,11 @@
   <h1>Select your Car</h1>
   <div class="row">
     <div *ngFor="let c of cars" class="col s3">
-      <div class="card">
+      <div
+        [ngClass]="{ 'z-depth-5': c === selectedCar }"
+        class="card z-depth-5"
+        (click)="selectedCar = c"
+      >
         <div class="card-image">
           <img [src]="'/assets/cars/' + c.id + '/' + c.id + '.jpg'" />
           <span class="card-title">{{ c.name }}</span>
